@@ -108,7 +108,7 @@ void distanceCallback(const sensor_msgs::Range::ConstPtr& msg){
 
 
 int main(int argc, char ** argv){
-    if(argc != 2){
+    if(argc < 2){
         ROS_INFO("Usage nodename carspeed");
         return 1;
     }
