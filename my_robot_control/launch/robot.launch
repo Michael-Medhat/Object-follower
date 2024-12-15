@@ -1,0 +1,7 @@
+<launch>
+    <node pkg="gazebo_ros" type="gazebo" name="gazebo" args="$(find my_robot_control)/worlds/my_robot.world --verbose" output="screen">
+    <env name="GAZEBO_MODEL_PATH" value="$(find my_robot_control)/"/>
+    <env name="GAZEBO_PLUGIN_PATH" value="$(find my_robot_control)/Plugin/build/"/>
+    </node>
+    <node pkg="my_robot_control" type="control" name="control" args="$(arg carspeed)" output="screen"/>
+</launch>
